@@ -19,7 +19,7 @@ needs Wei to confirm or supply real copy before launch.
 - **Domain:** weichen.studio
 - **Email:** **wchen@wabash.edu**  *(confirmed by Wei; the Brand Guide's `chen@wabash.edu` is wrong)*
 - **GitHub:** github.com/Chin-Way  *(confirmed by Wei; the Guide's `weichen` was a placeholder)*
-- **LinkedIn:** /in/wei-chen  `[VERIFY]`
+- **LinkedIn:** linkedin.com/in/wei-chen  *(confirmed by Wei)*
 - **Status:** `◍ Available for opportunities`
 
 ## Positioning
