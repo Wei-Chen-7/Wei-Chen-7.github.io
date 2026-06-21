@@ -38,10 +38,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Compute base path from repo name
+        id: bp
+        run: |
+          name="${GITHUB_REPOSITORY#*/}"
+          case "$name" in
+            *.github.io) echo "base=" >> "$GITHUB_OUTPUT" ;;   # user/org site -> root
+            *) echo "base=/$name" >> "$GITHUB_OUTPUT" ;;        # project site -> /repo
+          esac
+
       - name: Build static export
         run: npm run build
         env:
           GITHUB_PAGES: "true"
+          PAGES_BASE_PATH: ${{ steps.bp.outputs.base }}
 
       - name: Disable Jekyll (serve _next/ assets)
         run: touch ./out/.nojekyll
