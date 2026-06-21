@@ -17,7 +17,7 @@ needs Wei to confirm or supply real copy before launch.
 - **Logo mark:** circular monogram — a continuous sine wave forming a **W** nested inside a **C**
   ("Wei Chen as signal"). Knockout (white) on ink; on salmon for warm callouts.
 - **Domain:** weichen.studio
-- **Email:** **wchen@wabash.edu**  *(Folio. Brand Guide showed `chen@wabash.edu` — `[VERIFY]`)*
+- **Email:** **wchen@wabash.edu**  *(confirmed by Wei; the Brand Guide's `chen@wabash.edu` is wrong)*
 - **GitHub:** github.com/weichen  `[VERIFY]`
 - **LinkedIn:** /in/wei-chen  `[VERIFY]`
 - **Status:** `◍ Available for opportunities`
@@ -70,4 +70,4 @@ Strengths-Portfolio slide treatment (cover / section opener / content) for this 
 - "CS · Physics · East Asian Literature" major combo → use **Math & Computer Science**.
 - "Learner" as a strength → use the **real Top-5** above.
 - Marginalia / Resonance / JGU Mainz / Quantum Information Lab specifics.
-- `chen@wabash.edu` → use **wchen@wabash.edu** unless Wei confirms otherwise.
+- `chen@wabash.edu` → use **wchen@wabash.edu** (confirmed correct).
