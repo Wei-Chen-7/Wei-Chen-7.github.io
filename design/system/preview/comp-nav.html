@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Top Navigation" subtitle="Wordmark · nav · theme toggle" viewport="700x130" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 0; font-family: var(--font-sans); color: var(--fg-1); }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px; border-bottom: 1px solid var(--rule);
+  }
+  .brand { font-family: var(--font-serif); font-weight: 300; font-size: 22px; letter-spacing: -0.02em; }
+  .brand .dot { color: var(--accent); }
+  .links { display: flex; gap: 26px; }
+  .links a {
+    font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--fg-muted); text-decoration: none; padding: 4px 0;
+    border-bottom: 1px solid transparent;
+  }
+  .links a.active { color: var(--ink-900); border-bottom-color: var(--accent); }
+  .links a:hover { color: var(--ink-900); }
+  .toggle {
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
+    border: 1px solid var(--rule);
+    font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--ink-900);
+    background: transparent; cursor: pointer;
+  }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); padding: 14px 28px 4px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Top navigation</div>
+  <nav class="nav">
+    <div class="brand">Wei<span class="dot">.</span></div>
+    <div class="links">
+      <a>About</a><a>Education</a><a class="active">Work</a><a>Projects</a><a>Skills</a><a>Writing</a><a>Contact</a>
+    </div>
+    <button class="toggle">◐ Light</button>
+  </nav>
+</div>
+</body>
+</html>

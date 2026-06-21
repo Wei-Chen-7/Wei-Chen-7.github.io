@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Contact Rows" subtitle="Mono key · link value · ↗ glyph" viewport="700x220" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); margin-bottom: 14px; }
+  .row { display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .row:last-of-type { border-bottom: 0; }
+  .key { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .val { font-family: var(--font-sans); font-size: 14px; color: var(--fg-1); display: flex; align-items: baseline; gap: 8px; }
+  .val a { color: var(--ink-900); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .val a:hover { border-color: var(--ink-900); }
+  .arrow { font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Contact rows</div>
+  <div class="row"><span class="key">Email</span><span class="val"><a href="#">you@email.com</a> <span class="arrow">↗</span></span></div>
+  <div class="row"><span class="key">GitHub</span><span class="val"><a href="#">@your-handle</a> <span class="arrow">↗</span></span></div>
+  <div class="row"><span class="key">LinkedIn</span><span class="val"><a href="#">wei-chen</a> <span class="arrow">↗</span></span></div>
+</div>
+</body>
+</html>

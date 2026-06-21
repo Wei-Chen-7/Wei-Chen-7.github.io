@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Type" name="Display Scale" subtitle="Hierarchy by SIZE — Girga is one weight" viewport="700x260" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); }
+  .row { display: grid; grid-template-columns: 60px 1fr 80px; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .spec { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--fg-muted); text-align: right; }
+  .row.head { border-bottom: 4px solid var(--ink-900); padding-bottom: 6px; margin-bottom: 4px; }
+  .row.head .lbl { color: var(--fg-1); }
+  .sample { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; color: var(--fg-1); line-height: 0.95; }
+  .sample .red { color: var(--red-500); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row head"><span class="lbl">/ Display</span><span class="lbl">Girga · heavy slab · sized for impact</span><span class="spec">SIZE</span></div>
+  <div class="row"><span class="lbl">d-1</span><span class="sample" style="font-size: 72px;">Wei<span class="red">.</span></span><span class="spec">144 / .95</span></div>
+  <div class="row"><span class="lbl">d-2</span><span class="sample" style="font-size: 48px;">building things</span><span class="spec">96 / .95</span></div>
+  <div class="row"><span class="lbl">d-3</span><span class="sample" style="font-size: 36px;">Things I built.</span><span class="spec">72 / 1.05</span></div>
+</div>
+</body>
+</html>

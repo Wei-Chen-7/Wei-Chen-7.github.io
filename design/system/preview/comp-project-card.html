@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Project Card" subtitle="Bordered rectangle, no shadow" viewport="700x280" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 32px; font-family: var(--font-sans); color: var(--fg-1); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); margin-bottom: 18px; }
+  .pcard {
+    border: 1px solid var(--rule); padding: 20px;
+    display: flex; flex-direction: column; gap: 12px;
+    transition: border-color var(--dur-2) var(--ease-out);
+  }
+  .pcard:hover { border-color: var(--ink-900); }
+  .pcard .num { font-family: var(--font-mono); font-size: 11.2px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .pcard .title { font-family: var(--font-serif); font-weight: 300; font-size: 24px; letter-spacing: -0.02em; color: var(--fg-1); }
+  .pcard .desc { font-family: var(--font-sans); font-size: 13px; line-height: 1.5; color: var(--fg-2); }
+  .tags { display: flex; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
+  .tag {
+    font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--fg-muted); padding: 3px 7px; border: 1px solid var(--rule);
+  }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Project card</div>
+  <div class="row">
+    <div class="pcard">
+      <div class="num">/ 01</div>
+      <div class="title">[Project One]</div>
+      <div class="desc">A two-line description of what it does and why it matters. Keep it concrete.</div>
+      <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">API</span></div>
+    </div>
+    <div class="pcard">
+      <div class="num">/ 02</div>
+      <div class="title">[Project Two]</div>
+      <div class="desc">What problem it solves; what was tricky; what you learned.</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Data</span><span class="tag">CLI</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

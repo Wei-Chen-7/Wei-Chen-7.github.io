@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Colors" name="Ink Scale" subtitle="Cool near-black to mid-gray" viewport="700x180" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); }
+  .row { display: flex; gap: 8px; align-items: flex-end; margin-bottom: 14px; }
+  .swatch { flex: 1; height: 88px; display: flex; flex-direction: column; justify-content: flex-end; padding: 10px 12px; border: 1px solid var(--rule); }
+  .swatch.dark .name, .swatch.dark .hex { color: rgba(255,255,255,0.85); }
+  .hex { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--fg-muted); }
+  .name { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-2); margin-bottom: 2px; }
+  .lbl { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Ink (cool near-black, then warm grays)</div>
+  <div class="row">
+    <div class="swatch dark" style="background:#0A0A0A"><span class="name">ink-900</span><span class="hex">#0A0A0A</span></div>
+    <div class="swatch dark" style="background:#1A1A1A"><span class="name">ink-800</span><span class="hex">#1A1A1A</span></div>
+    <div class="swatch dark" style="background:#333333"><span class="name">ink-700</span><span class="hex">#333333</span></div>
+    <div class="swatch dark" style="background:#666666"><span class="name">ink-500</span><span class="hex">#666666</span></div>
+    <div class="swatch" style="background:#999999"><span class="name">ink-400</span><span class="hex">#999999</span></div>
+    <div class="swatch" style="background:#CCCCCC"><span class="name">ink-300</span><span class="hex">#CCCCCC</span></div>
+  </div>
+</div>
+</body>
+</html>

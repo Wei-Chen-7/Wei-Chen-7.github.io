@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Colors" name="Little Giants Palette" subtitle="The four official colors — Red, Black, Salmon, White (with Pantones)" viewport="700x280" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); margin-bottom: 12px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; }
+  .swatch {
+    aspect-ratio: 1.4 / 1;
+    padding: 12px 14px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    border: 1px solid var(--rule);
+  }
+  .swatch.on-paper { background: #FFFFFF; }
+  .swatch.on-red   { background: #C81C31; color: #FFFFFF; }
+  .swatch.on-black { background: #231F20; color: #FFFFFF; }
+  .swatch.on-salmon{ background: #FBC391; color: #231F20; }
+  .name {
+    font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+  .pms {
+    font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em; opacity: 0.7;
+  }
+  .hex {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Little Giants — Official Brand Palette</div>
+  <div class="row">
+    <div class="swatch on-red">
+      <div><div class="name">Red</div><div class="pms">PMS 186 C</div></div>
+      <div class="hex">#C81C31</div>
+    </div>
+    <div class="swatch on-black">
+      <div><div class="name">Black</div><div class="pms">PMS Neutral Black C</div></div>
+      <div class="hex">#231F20</div>
+    </div>
+    <div class="swatch on-salmon">
+      <div><div class="name">Light Salmon</div><div class="pms" style="opacity:0.6;">PMS 148 C</div></div>
+      <div class="hex">#FBC391</div>
+    </div>
+    <div class="swatch on-paper">
+      <div><div class="name" style="color: var(--ink-700);">White</div><div class="pms" style="color: var(--fg-muted);">PMS 7436 C</div></div>
+      <div class="hex" style="color: var(--ink-700);">#FFFFFF</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

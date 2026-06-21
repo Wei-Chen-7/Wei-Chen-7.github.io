@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Form Fields" subtitle="Hairline-underline inputs, mono labels" viewport="700x260" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); margin-bottom: 14px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .label { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .input {
+    font-family: var(--font-sans); font-size: 15px; color: var(--ink-900);
+    background: transparent; border: 0; border-bottom: 1px solid var(--ink-900);
+    padding: 8px 0; outline: none; width: 100%;
+  }
+  .input::placeholder { color: var(--ink-400); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .full { grid-column: 1 / -1; }
+  textarea.input { border: 1px solid var(--rule); padding: 10px 12px; min-height: 64px; resize: none; }
+  textarea.input:focus { border-color: var(--ink-900); }
+  .input:focus { border-color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Form fields</div>
+  <div class="row">
+    <div class="field">
+      <span class="label">Name</span>
+      <input class="input" placeholder="Your name">
+    </div>
+    <div class="field">
+      <span class="label">Email</span>
+      <input class="input" placeholder="you@email.com">
+    </div>
+    <div class="field full">
+      <span class="label">Message</span>
+      <textarea class="input" placeholder="Say hello, or send a strange link."></textarea>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Iconography" subtitle="Unicode first; SVGs for social and utility" viewport="700x200" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); display: flex; flex-direction: column; gap: 14px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; padding: 6px 0; }
+  .ico { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; color: var(--ink-900); }
+  .ico svg { display: block; }
+  .glyph {
+    font-family: var(--font-mono); font-size: 20px; color: var(--ink-900); width: 28px; text-align: center;
+  }
+  .glyph.accent { color: var(--accent); }
+  .lbl2 { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); margin-left: 4px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Iconography — Unicode glyphs come first; SVGs second</div>
+  <div class="row">
+    <span class="glyph">→</span><span class="lbl2">forward</span>
+    <span class="glyph">↗</span><span class="lbl2">external</span>
+    <span class="glyph">·</span><span class="lbl2">separator</span>
+    <span class="glyph">—</span><span class="lbl2">em-dash</span>
+    <span class="glyph accent">◍</span><span class="lbl2">open</span>
+    <span class="glyph accent">●</span><span class="lbl2">filled</span>
+    <span class="glyph">/</span><span class="lbl2">section</span>
+  </div>
+  <div class="row">
+    <span class="ico"><img src="../assets/icons/github.svg" width="16" height="16" alt=""></span>
+    <span class="ico"><img src="../assets/icons/linkedin.svg" width="16" height="16" alt=""></span>
+    <span class="ico"><img src="../assets/icons/twitter-x.svg" width="16" height="16" alt=""></span>
+    <span class="ico"><img src="../assets/icons/email.svg" width="16" height="16" alt=""></span>
+    <span class="ico"><img src="../assets/icons/sun.svg" width="16" height="16" alt=""></span>
+    <span class="ico"><img src="../assets/icons/moon.svg" width="16" height="16" alt=""></span>
+    <span class="ico"><img src="../assets/icons/arrow-up-right.svg" width="16" height="16" alt=""></span>
+    <span class="lbl2">1.5px stroke · square caps · currentColor</span>
+  </div>
+</div>
+</body>
+</html>

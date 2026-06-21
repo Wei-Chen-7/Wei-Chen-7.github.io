@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Colors" name="Light Salmon" subtitle="Tertiary warm tone — alt feature-section bleed" viewport="700x260" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 32px; font-family: var(--font-sans); color: var(--fg-1); display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; align-items: center; }
+  .big {
+    background: #FBC391;
+    color: #231F20;
+    padding: 20px;
+    min-height: 200px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .big .name {
+    font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+  .big .quote {
+    font-family: var(--font-display); font-weight: 400; font-size: 38px; line-height: 0.95; letter-spacing: -0.005em;
+  }
+  .big .hex {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; align-self: flex-end;
+  }
+  .uses { display: flex; flex-direction: column; gap: 12px; }
+  .row { display: grid; grid-template-columns: 90px 1fr; gap: 14px; align-items: baseline; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+  .row:last-child { border-bottom: 0; }
+  .k { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .v { font-family: var(--font-sans); font-size: 14px; color: var(--fg-1); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="big">
+    <div class="name">Light Salmon — the tertiary</div>
+    <div class="quote">A warm spread<br/>when red would shout.</div>
+    <div class="hex">#FBC391</div>
+  </div>
+  <div class="uses">
+    <div class="row"><span class="k">Use for</span><span class="v">A second feature section as warm bleed (alt to red)</span></div>
+    <div class="row"><span class="k">Pair with</span><span class="v">Black text — high contrast, never red text on salmon</span></div>
+    <div class="row"><span class="k">Hover</span><span class="v">Deepens to <code style="background:none; color:#E8A26C;">#E8A26C</code></span></div>
+    <div class="row"><span class="k">Don't</span><span class="v">Button fills, hairlines, or as a body-text color</span></div>
+  </div>
+</div>
+</body>
+</html>

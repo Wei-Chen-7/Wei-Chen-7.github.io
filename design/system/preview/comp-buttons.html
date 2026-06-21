@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Buttons" subtitle="Red, ink, ghost, link — all square, mono uppercase" viewport="700x160" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); display: flex; flex-direction: column; gap: 16px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .row { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-red {
+    font-family: var(--font-mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    padding: 12px 22px; border: 1px solid #C8102E;
+    background: #C8102E; color: #FFFFFF;
+    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+
+  .btn-ink {
+    font-family: var(--font-mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    padding: 12px 22px; border: 1px solid #0A0A0A;
+    background: #0A0A0A; color: #FFFFFF;
+    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+
+  .btn-ghost {
+    font-family: var(--font-mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    padding: 12px 22px; border: 1px solid #0A0A0A;
+    background: transparent; color: #0A0A0A; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+
+  .btn-link {
+    font-family: var(--font-mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.18em; color: #0A0A0A;
+    background: transparent; border: 0; padding: 4px 0;
+    border-bottom: 1px solid #0A0A0A; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .arrow { font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Buttons — primary (red), ink (black), ghost, link</div>
+  <div class="row">
+    <button class="btn-red">See the work <span class="arrow">→</span></button>
+    <button class="btn-ink">See the work <span class="arrow">→</span></button>
+    <button class="btn-ghost">Get in touch <span class="arrow">→</span></button>
+    <button class="btn-link">Archive of older work <span class="arrow">→</span></button>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Section Header" subtitle="/ NN + serif subtitle, strong bottom rule" viewport="700x200" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 32px; font-family: var(--font-sans); color: var(--fg-1); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); margin-bottom: 18px; }
+  .section-head {
+    display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: baseline;
+    padding-bottom: 14px; border-bottom: 1px solid var(--ink-900);
+  }
+  .num { font-family: var(--font-mono); font-size: 11.2px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .title { font-family: var(--font-serif); font-weight: 300; font-size: 36px; letter-spacing: -0.025em; line-height: 1.05; color: #C81C31; }
+  .subtitle { font-family: var(--font-sans); font-size: 14px; color: var(--fg-2); margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Section header</div>
+  <div class="section-head">
+    <div class="num">/ 04 &nbsp;Projects</div>
+    <div>
+      <div class="title">Things I built, mostly because I wanted them to exist.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

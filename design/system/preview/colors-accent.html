@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Colors" name="Wabash Red" subtitle="The brand color — #C8102E, used in 4 sanctioned places" viewport="700x220" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 0; font-family: var(--font-sans); color: var(--fg-1); display: grid; grid-template-columns: 1fr 1.2fr; }
+  .swatch-big {
+    background: #C8102E;
+    color: #FFFFFF;
+    padding: 18px 20px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 200px;
+  }
+  .name {
+    font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+  .big-mark { font-family: var(--font-display); font-weight: 400; font-size: 96px; line-height: 0.9; letter-spacing: -0.02em; }
+  .hex { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; opacity: 0.85; }
+  .uses { padding: 22px 24px; display: flex; flex-direction: column; gap: 12px; }
+  .row {
+    display: grid; grid-template-columns: 80px 1fr;
+    gap: 14px; align-items: baseline;
+    padding-bottom: 10px; border-bottom: 1px solid var(--rule);
+  }
+  .row:last-child { border-bottom: 0; }
+  .k { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .v { font-family: var(--font-sans); font-size: 14px; color: var(--fg-1); }
+  .accent { color: #C8102E; font-weight: 500; }
+  .tone {
+    width: 28px; height: 28px; display: inline-block; vertical-align: middle;
+    margin-right: 8px; border: 1px solid var(--rule);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="swatch-big">
+    <span class="name">Wabash Red</span>
+    <span class="big-mark">Wei.</span>
+    <span class="hex">#C8102E</span>
+  </div>
+  <div class="uses">
+    <div class="row"><span class="k">Wordmark</span><span class="v"><span class="accent" style="font-family: var(--font-display); font-size: 22px;">Wei.</span></span></div>
+    <div class="row"><span class="k">Hover</span><span class="v">Underline + text color → red on links</span></div>
+    <div class="row"><span class="k">Section</span><span class="v">Red bleed bg for one feature section</span></div>
+    <div class="row"><span class="k">Steps</span><span class="v">
+      <span class="tone" style="background:#9C0C24"></span>
+      <span class="tone" style="background:#C8102E"></span>
+      <span class="tone" style="background:#E5435A"></span>
+      <span class="tone" style="background:#F5D4D9"></span>
+    </span></div>
+  </div>
+</div>
+</body>
+</html>

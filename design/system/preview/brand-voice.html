@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Voice Specimen" subtitle="Section subtitles + red-weighted emphasis" viewport="700x200" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); display: flex; gap: 32px; }
+  .col { flex: 1; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); margin-bottom: 10px; }
+  .quote { font-family: var(--font-display); font-weight: 400; font-size: 30px; letter-spacing: -0.01em; line-height: 1.0; color: var(--ink-900); }
+  .quote em { font-style: normal; color: var(--red-500); }
+  .body { font-family: var(--font-sans); font-size: 16px; line-height: 1.55; color: var(--fg-2); }
+  .body em { font-style: normal; color: var(--red-500); font-weight: 500; }
+  .footer { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); margin-top: 12px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="col">
+    <div class="lbl">/ Voice — section subtitle</div>
+    <div class="quote">Things I built, mostly because I wanted them to exist.</div>
+    <div class="footer">↑ Sentence case · ends with period · gently self-aware</div>
+  </div>
+  <div class="col">
+    <div class="lbl">/ Voice — body with red accent</div>
+    <div class="body">The fastest way to reach me is <em>email</em>. I read it daily, reply within a few.</div>
+    <div class="footer">↑ "I", not "we" · accent in red weight, not italic</div>
+  </div>
+</div>
+</body>
+</html>

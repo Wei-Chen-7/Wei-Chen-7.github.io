@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Spacing" name="Spacing Scale" subtitle="4 → 128 px, base-4 ramp" viewport="700x220" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); margin-bottom: 14px; }
+  .scale { display: flex; align-items: flex-end; gap: 8px; }
+  .step { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .block { background: var(--ink-900); width: 28px; }
+  .tok { font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted); letter-spacing: 0.08em; }
+  .px { font-family: var(--font-mono); font-size: 10px; color: var(--fg-1); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Spacing scale</div>
+  <div class="scale">
+    <div class="step"><div class="block" style="height:4px"></div><span class="px">4</span><span class="tok">s-1</span></div>
+    <div class="step"><div class="block" style="height:8px"></div><span class="px">8</span><span class="tok">s-2</span></div>
+    <div class="step"><div class="block" style="height:12px"></div><span class="px">12</span><span class="tok">s-3</span></div>
+    <div class="step"><div class="block" style="height:16px"></div><span class="px">16</span><span class="tok">s-4</span></div>
+    <div class="step"><div class="block" style="height:24px"></div><span class="px">24</span><span class="tok">s-5</span></div>
+    <div class="step"><div class="block" style="height:32px"></div><span class="px">32</span><span class="tok">s-6</span></div>
+    <div class="step"><div class="block" style="height:48px"></div><span class="px">48</span><span class="tok">s-7</span></div>
+    <div class="step"><div class="block" style="height:64px"></div><span class="px">64</span><span class="tok">s-8</span></div>
+    <div class="step"><div class="block" style="height:96px"></div><span class="px">96</span><span class="tok">s-9</span></div>
+    <div class="step"><div class="block" style="height:128px"></div><span class="px">128</span><span class="tok">s-10</span></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,346 @@
+/* =============================================================
+ * Wei Chen — Design System
+ * Tokens for color & type
+ * -------------------------------------------------------------
+ * Mood: editorial, quiet, intentional. A printed object.
+ *
+ * Type stack (Wabash College house faces):
+ *   Display — Girga                (custom serif, supplied by user)
+ *   Text    — Untitled Sans        (Klim Type Foundry, commercial)
+ *   Mono    — JetBrains Mono       (open source, Google Fonts)
+ *
+ * Both Girga and Untitled Sans are licensed faces. Drop the
+ * .woff2 files into /fonts/ and they will load automatically;
+ * until then, Google-Fonts substitutes kick in via the stack:
+ *   Girga         → Newsreader (closest editorial serif)
+ *   Untitled Sans → Hanken Grotesk (closest neutral grotesque)
+ * ============================================================= */
+
+/* Open / substitute fonts loaded from Google Fonts.
+ * Newsreader  — stand-in for Girga while not licensed.
+ * Hanken Grotesk — stand-in for Untitled Sans.
+ * JetBrains Mono — the real thing, used directly. */
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Girga — USER-SUPPLIED FILE.
+ * What we received: GirgaW00-Stencil.woff2 (a *Stencil* cut, not a regular
+ * weight). Stencil is a single distinctive display style with cut letterforms;
+ * it has no italic and no other weights. We register it under family 'Girga'
+ * across the whole weight range so existing display rules use it. Italic
+ * emphasis cascades to Newsreader italic — fine here because the italic word
+ * is always rendered in vermilion and is meant to read as markedly different
+ * from the surrounding text anyway. */
+@font-face {
+  font-family: 'Girga';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: local('Girga Stencil'), local('GirgaW00-Stencil'),
+       url('./fonts/GirgaW00-Stencil.woff2') format('woff2');
+}
+/* Also expose Girga Stencil under its proper name so a designer can reach
+ * for it explicitly via font-family: 'Girga Stencil'. */
+@font-face {
+  font-family: 'Girga Stencil';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: local('Girga Stencil'), local('GirgaW00-Stencil'),
+       url('./fonts/GirgaW00-Stencil.woff2') format('woff2');
+}
+
+/* Untitled Sans — USER-SUPPLIED FILE.
+ * What we received: Untitled Sans *Test* Regular (Klim's TRIAL build).
+ * Trial builds have limited glyph coverage and a non-commercial license;
+ * a proper webfont license is required before production deployment.
+ * Registered under family 'Untitled Sans' at weight 400. Other weights
+ * cascade to Hanken Grotesk. */
+@font-face {
+  font-family: 'Untitled Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Untitled Sans Test'), local('Untitled Sans'),
+       url('./fonts/UntitledSans-Test-Regular.woff2') format('woff2');
+}
+
+:root {
+  /* =============================================================
+   * PALETTE — Wabash visual language
+   * Wabash Red, pure white paper, near-black ink. Warm grays.
+   * ============================================================= */
+
+  /* ---------- Wabash Red (primary brand color) ---------- */
+  --red-700: #9C1726;     /* deep — for press / hover-on-light */
+  --red-500: #C81C31;     /* PRIMARY Wabash Red */
+  --red-300: #E5435A;     /* hover for red surfaces / dark mode */
+  --red-100: #F5D5D9;     /* tinted wash for selection / hover */
+
+  /* ---------- Wabash Light Salmon (tertiary, warm tone) ----------
+   * Used for banding a friendly section, a callout tile, or as the
+   * "warm paper" treatment behind feature copy. Never as a button fill. */
+  --salmon-500: #FBC391;  /* PRIMARY salmon — PMS 148 C */
+  --salmon-400: #FDD4AC;  /* lighter wash */
+  --salmon-600: #E8A26C;  /* deeper, for hover/press on salmon surfaces */
+
+  /* ---------- Paper / Surface ---------- */
+  --paper:     #FFFFFF;   /* PRIMARY page background — pure white */
+  --paper-50:  #FAFAF9;
+  --paper-100: #F5F4F2;   /* slight warm tint when banding */
+  --paper-200: #ECEAE6;   /* inset / card-on-paper */
+  --paper-300: #D9D6D1;   /* divider rule */
+
+  /* ---------- Ink (cool near-black) ---------- */
+  --ink-900: #231F20;     /* PRIMARY text — Wabash PMS Neutral Black C */
+  --ink-800: #2F2A2B;     /* heavy body */
+  --ink-700: #3F3A3B;     /* secondary text */
+  --ink-500: #6E6A6B;     /* muted text, micro-labels */
+  --ink-400: #9C9899;     /* tertiary / disabled */
+  --ink-300: #CCC8C9;     /* placeholder */
+
+  /* ---------- Cream (preserved from v1; available via [data-theme="editorial"]) ---------- */
+  --cream-100: #F8F6F2;
+  --cream-200: #F0ECE6;
+  --vermilion: #DA4E1B;
+
+  /* ---------- Semantic aliases ---------- */
+  --bg-1:        var(--paper);
+  --bg-2:        var(--paper-100);
+  --bg-inset:    var(--paper-200);
+  --bg-red:      var(--red-500);   /* full-bleed red poster section */
+  --bg-warm:     var(--salmon-500); /* full-bleed light-salmon warm section */
+  --bg-warm-soft: var(--salmon-400); /* softer salmon wash */
+  --bg-inverse:  var(--ink-900);
+
+  --fg-1:        var(--ink-900);
+  --fg-2:        var(--ink-700);
+  --fg-muted:    var(--ink-500);
+  --fg-faint:    var(--ink-400);
+  --fg-accent:   var(--red-500);
+  --fg-on-red:   var(--paper);     /* type sitting on red bg */
+  --fg-on-dark:  var(--paper);
+
+  --accent:        var(--red-500);
+  --accent-deep:   var(--red-700);
+  --accent-soft:   var(--red-300);
+  --accent-warm:   var(--salmon-500);  /* the tertiary Wabash tone */
+
+  --rule:          var(--paper-300);
+  --rule-strong:   var(--ink-900);
+  --rule-on-red:   rgba(255, 255, 255, 0.25);
+
+  /* ---------- Type stack ----------
+   * Defaults to fully-free Google Fonts:
+   *   Display — Alfa Slab One (heavy slab, single weight)
+   *   Body    — Hanken Grotesk (neutral grotesque)
+   *   Mono    — JetBrains Mono
+   * Girga and Untitled Sans are kept in the stack so they take over
+   * automatically if a designer drops their licensed .woff2 files into
+   * /fonts/ — the @font-face blocks above are still wired. To force the
+   * licensed faces, list them first; to force the free fonts, this is
+   * the right order. */
+  --font-serif:   'Alfa Slab One', 'Girga', 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-display: var(--font-serif);
+  --font-sans:    'Hanken Grotesk', 'Untitled Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---------- Type scale ----------
+   * Girga is ONE heavy weight. Hierarchy is built with SIZE, not weight.
+   * Display sizes go large — this is poster typography.
+   * Body uses Untitled Sans 400 / 500. */
+  --t-display-1: 128px;   /* poster phrase — Alfa Slab One is wide */
+  --t-display-2: 88px;    /* hero */
+  --t-display-3: 72px;    /* section title */
+  --t-h1: 56px;
+  --t-h2: 40px;
+  --t-h3: 28px;
+  --t-h4: 22px;
+  --t-lede: 20px;
+  --t-body: 16px;
+  --t-small: 14px;
+  --t-micro: 11.2px;
+
+  --lh-display: 0.95;     /* tight; Girga's heavy slabs read best near 1.0 */
+  --lh-h: 1.05;
+  --lh-body: 1.5;
+  --lh-tight: 1.15;
+
+  --tr-display: -0.005em; /* Alfa Slab One is wide and chunky — keep near-neutral */
+  --tr-h: -0.015em;
+  --tr-body: 0;
+  --tr-mono: 0.18em;
+
+  /* ---------- Spacing ---------- */
+  --s-0: 0;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --s-11: 192px;
+
+  /* ---------- Radii ---------- */
+  /* The Wabash system is fully square. */
+  --r-0: 0;
+  --r-1: 2px;
+  --r-pill: 999px;        /* status pill is the lone exception */
+
+  /* ---------- Borders ---------- */
+  --hair: 1px solid var(--rule);
+  --hair-strong: 1px solid var(--ink-900);
+  --rule-thick: 4px solid var(--ink-900);   /* heavy ink underline for category labels */
+  --rule-red:   4px solid var(--red-500);   /* red marker bar */
+
+  /* ---------- Shadows (almost none — the system is flat) ---------- */
+  --shadow-paper: 0 1px 0 rgba(0, 0, 0, 0.04);
+  --shadow-lift:  0 6px 24px -8px rgba(0, 0, 0, 0.12);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-1: 140ms;
+  --dur-2: 240ms;
+  --dur-3: 480ms;
+
+  /* ---------- Layout ---------- */
+  --measure: 64ch;
+  --container: 1200px;
+  --gutter: clamp(24px, 5vw, 80px);
+}
+
+/* =============================================================
+ * Dark theme — paper goes black, ink goes white, red brightens
+ * Opt-in via [data-theme="dark"]
+ * ============================================================= */
+[data-theme="dark"] {
+  --paper:     #0A0A0A;
+  --paper-50:  #121212;
+  --paper-100: #1A1A1A;
+  --paper-200: #222222;
+  --paper-300: #333333;
+
+  --ink-900: #FAFAF9;
+  --ink-800: #ECEAE6;
+  --ink-700: #D9D6D1;
+  --ink-500: #999999;
+  --ink-400: #666666;
+  --ink-300: #444444;
+
+  --red-500: #E5435A;      /* warmer in the dark */
+  --red-700: #C81C31;
+  --red-300: #F26478;
+
+  --rule: var(--paper-300);
+}
+
+/* =============================================================
+ * Editorial theme — the v1 cream + vermilion design, preserved
+ * as an opt-in via [data-theme="editorial"]
+ * ============================================================= */
+[data-theme="editorial"] {
+  --paper:     #F8F6F2;
+  --paper-50:  #FBFAF6;
+  --paper-100: #F0ECE6;
+  --paper-200: #EBE6E0;
+  --paper-300: #D6CFC2;
+
+  --ink-900: #231D1A;
+  --ink-800: #39312D;
+  --ink-700: #5A4F48;
+  --ink-500: #746A63;
+  --ink-400: #A19991;
+  --ink-300: #C2BBB1;
+
+  --red-500: #DA4E1B;      /* vermilion replaces wabash red */
+  --red-700: #B23E12;
+  --red-300: #ED7845;
+}
+
+/* =============================================================
+ * Semantic element styles
+ * ============================================================= */
+
+.display-1, .display-2, .display-3,
+.h1, .h2, .h3, .h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;            /* Girga is one weight; the file defines it */
+  color: var(--fg-1);
+  margin: 0;
+}
+
+.display-1 { font-size: var(--t-display-1); line-height: var(--lh-display); letter-spacing: var(--tr-display); }
+.display-2 { font-size: var(--t-display-2); line-height: var(--lh-display); letter-spacing: var(--tr-display); }
+.display-3 { font-size: var(--t-display-3); line-height: var(--lh-h);       letter-spacing: var(--tr-display); }
+.h1        { font-size: var(--t-h1);        line-height: var(--lh-h);       letter-spacing: var(--tr-h); }
+.h2        { font-size: var(--t-h2);        line-height: var(--lh-h);       letter-spacing: var(--tr-h); }
+.h3        { font-size: var(--t-h3);        line-height: var(--lh-tight);   letter-spacing: var(--tr-h); }
+.h4        { font-size: var(--t-h4);        line-height: var(--lh-tight);   letter-spacing: var(--tr-h); }
+
+.lede {
+  font-family: var(--font-sans);
+  font-size: var(--t-lede);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--fg-2);
+}
+
+.body {
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
+  color: var(--fg-2);
+}
+
+.small {
+  font-family: var(--font-sans);
+  font-size: var(--t-small);
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+.eyebrow,
+.micro {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--fg-muted);
+}
+
+/* The signature wordmark treatment — "Name." in red Girga with red period. */
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--red-500);
+  line-height: 1;
+}
+
+/* Inline accents */
+.accent { color: var(--fg-accent); }
+.muted  { color: var(--fg-muted); }
+.dot    { color: var(--red-500); }
+.serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--fg-accent);
+}
+
+/* Code inline */
+code, .code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--bg-2);
+  padding: 0.1em 0.35em;
+  border-radius: var(--r-1);
+  color: var(--ink-800);
+}

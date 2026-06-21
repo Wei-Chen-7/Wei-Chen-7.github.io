@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Spacing" name="Corner Radii" subtitle="Square by default; pill is rare" viewport="700x220" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); margin-bottom: 14px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 18px; }
+  .item { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .item .demo { width: 100%; height: 64px; background: var(--paper-200); border: 1px solid var(--rule); }
+  .item .name { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .item .val  { font-family: var(--font-mono); font-size: 11px; color: var(--fg-1); }
+  .r0 { border-radius: 0; }
+  .r1 { border-radius: 2px; }
+  .r2 { border-radius: 4px; }
+  .rp { border-radius: 999px; height: 40px !important; width: 200px !important; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Corner radii — the system is mostly square</div>
+  <div class="row">
+    <div class="item"><div class="demo r0"></div><span class="name">r-0</span><span class="val">0 — default</span></div>
+    <div class="item"><div class="demo r1"></div><span class="name">r-1</span><span class="val">2px — inline code</span></div>
+    <div class="item"><div class="demo r2"></div><span class="name">r-2</span><span class="val">4px — chips (rare)</span></div>
+    <div class="item"><div class="demo rp"></div><span class="name">r-pill</span><span class="val">999 — status pill only</span></div>
+  </div>
+</div>
+</body>
+</html>

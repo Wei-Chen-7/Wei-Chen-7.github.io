@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Spacing" name="Elevation" subtitle="Flat — hairline, inset band, or strong rule" viewport="700x220" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); margin-bottom: 18px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .surface { padding: 18px; min-height: 84px; display: flex; flex-direction: column; gap: 6px; }
+  .surface .sname { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .surface .sdesc { font-family: var(--font-sans); font-size: 12px; color: var(--fg-2); }
+  .s1 { background: var(--paper-100); border: 1px solid var(--rule); }
+  .s2 { background: var(--paper-200); }
+  .s3 { background: var(--paper-100); border-top: 1px solid var(--ink-900); }
+  .note { font-family: var(--font-mono); font-size: 10px; color: var(--fg-muted); letter-spacing: 0.08em; margin-top: 14px; text-align: right; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="lbl">/ Elevation — flat, hairline, band</div>
+  <div class="grid">
+    <div class="surface s1"><span class="sname">Card</span><span class="sdesc">paper-100 + 1px hairline. No shadow.</span></div>
+    <div class="surface s2"><span class="sname">Inset band</span><span class="sdesc">paper-200, no border. Used to band a section.</span></div>
+    <div class="surface s3"><span class="sname">Strong rule</span><span class="sdesc">1px ink-900 top border. The "section header" treatment.</span></div>
+  </div>
+  <div class="note">No drop-shadows. No glow. No layered cards.</div>
+</div>
+</body>
+</html>

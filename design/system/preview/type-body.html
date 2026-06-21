@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Type" name="Body Scale" subtitle="IBM Plex Sans — lede / body / small" viewport="700x260" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-1); }
+  .card { padding: 28px 32px; font-family: var(--font-sans); color: var(--fg-1); }
+  .row { display: grid; grid-template-columns: 60px 1fr 90px; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
+  .spec { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--fg-muted); text-align: right; }
+  .row.head { border-bottom: 1px solid var(--ink-900); padding-bottom: 6px; margin-bottom: 4px; }
+  .row.head .lbl { color: var(--fg-1); }
+  .lede { font-size: 18px; line-height: 1.4; color: var(--fg-2); }
+  .body { font-size: 14px; line-height: 1.5; color: var(--fg-2); }
+  .small { font-size: 12px; line-height: 1.5; color: var(--fg-muted); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row head"><span class="lbl">/ Body</span><span class="lbl">Untitled Sans · 1.4–1.5 lh</span><span class="spec">SIZE</span></div>
+  <div class="row"><span class="lbl">lede</span><span class="lede">A computer science student exploring the edges where algorithms meet language.</span><span class="spec">20 / 1.4</span></div>
+  <div class="row"><span class="lbl">body</span><span class="body">My coursework lives at the intersection of computer science, physics, and modern literature. I like that the three keep arguing with each other.</span><span class="spec">16 / 1.5</span></div>
+  <div class="row"><span class="lbl">small</span><span class="small">Relevant coursework: Data Structures (CSC211), E &amp; M (PHY 112), Modern Chinese Literature.</span><span class="spec">14 / 1.5</span></div>
+</div>
+</body>
+</html>
