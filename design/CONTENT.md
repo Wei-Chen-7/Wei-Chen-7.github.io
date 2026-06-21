@@ -18,7 +18,7 @@ needs Wei to confirm or supply real copy before launch.
   ("Wei Chen as signal"). Knockout (white) on ink; on salmon for warm callouts.
 - **Domain:** weichen.studio
 - **Email:** **wchen@wabash.edu**  *(confirmed by Wei; the Brand Guide's `chen@wabash.edu` is wrong)*
-- **GitHub:** github.com/weichen  `[VERIFY]`
+- **GitHub:** github.com/Chin-Way  *(confirmed by Wei; the Guide's `weichen` was a placeholder)*
 - **LinkedIn:** /in/wei-chen  `[VERIFY]`
 - **Status:** `◍ Available for opportunities`
 
@@ -36,7 +36,7 @@ needs Wei to confirm or supply real copy before launch.
 - Member of the **Wabash Glee Club** (sang through NYC over spring break — "best trip I've taken in school").
 - Easygoing — can hold a real conversation with almost anyone; usually the thing that opens the door.
 - Based in **Crawfordsville, IN** (Wabash College). `[from Guide — geographically consistent]`
-- **Class of 2027 (expected).** `[Guide — VERIFY]`
+- **Class of 2027 (expected).** *(confirmed by Wei)*
 
 ## Strengths — the centerpiece (Folio · CliftonStrengths Top 5)
 Each card: name + metaphor, an "at my best," and a growth edge. Use the Guide's
