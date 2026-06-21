@@ -1,0 +1,1282 @@
+@import "tailwindcss";
+
+/* Dark mode is opt-in via [data-theme="dark"] on <html>. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* =============================================================
+ * DESIGN TOKENS — ported verbatim from
+ * design/system/colors_and_type.css (the source of truth).
+ * Fonts are wired to next/font (free Google Fonts only:
+ * Alfa Slab One / Hanken Grotesk / JetBrains Mono). The licensed
+ * Girga / Untitled Sans files are intentionally NOT shipped.
+ * ============================================================= */
+:root {
+  /* ---------- Wabash Red (primary brand color) ---------- */
+  --red-700: #9c1726;
+  --red-500: #c81c31;
+  --red-300: #e5435a;
+  --red-100: #f5d5d9;
+
+  /* ---------- Wabash Light Salmon (tertiary, warm tone) ---------- */
+  --salmon-500: #fbc391;
+  --salmon-400: #fdd4ac;
+  --salmon-600: #e8a26c;
+
+  /* ---------- Paper / Surface ---------- */
+  --paper: #ffffff;
+  --paper-50: #fafaf9;
+  --paper-100: #f5f4f2;
+  --paper-200: #eceae6;
+  --paper-300: #d9d6d1;
+
+  /* ---------- Ink (cool near-black) ---------- */
+  --ink-900: #231f20;
+  --ink-800: #2f2a2b;
+  --ink-700: #3f3a3b;
+  --ink-500: #6e6a6b;
+  --ink-400: #9c9899;
+  --ink-300: #ccc8c9;
+
+  /* ---------- Cream / vermilion (editorial theme) ---------- */
+  --cream-100: #f8f6f2;
+  --cream-200: #f0ece6;
+  --vermilion: #da4e1b;
+
+  /* ---------- Semantic aliases ---------- */
+  --bg-1: var(--paper);
+  --bg-2: var(--paper-100);
+  --bg-inset: var(--paper-200);
+  --bg-red: var(--red-500);
+  --bg-warm: var(--salmon-500);
+  --bg-warm-soft: var(--salmon-400);
+  --bg-inverse: var(--ink-900);
+
+  --fg-1: var(--ink-900);
+  --fg-2: var(--ink-700);
+  --fg-muted: var(--ink-500);
+  --fg-faint: var(--ink-400);
+  --fg-accent: var(--red-500);
+  --fg-on-red: var(--paper);
+  --fg-on-dark: var(--paper);
+
+  --accent: var(--red-500);
+  --accent-deep: var(--red-700);
+  --accent-soft: var(--red-300);
+  --accent-warm: var(--salmon-500);
+
+  --rule: var(--paper-300);
+  --rule-strong: var(--ink-900);
+  --rule-on-red: rgba(255, 255, 255, 0.25);
+
+  /* ---------- Type stack — free Google Fonts via next/font ---------- */
+  --font-serif: var(--font-alfa), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-serif);
+  --font-sans: var(--font-hanken), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---------- Type scale ---------- */
+  --t-display-1: 128px;
+  --t-display-2: 88px;
+  --t-display-3: 72px;
+  --t-h1: 56px;
+  --t-h2: 40px;
+  --t-h3: 28px;
+  --t-h4: 22px;
+  --t-lede: 20px;
+  --t-body: 16px;
+  --t-small: 14px;
+  --t-micro: 11.2px;
+
+  --lh-display: 0.95;
+  --lh-h: 1.05;
+  --lh-body: 1.5;
+  --lh-tight: 1.15;
+
+  --tr-display: -0.005em;
+  --tr-h: -0.015em;
+  --tr-body: 0;
+  --tr-mono: 0.18em;
+
+  /* ---------- Spacing ---------- */
+  --s-0: 0;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --s-11: 192px;
+
+  /* ---------- Radii — the system is square ---------- */
+  --r-0: 0;
+  --r-1: 2px;
+  --r-pill: 999px;
+
+  /* ---------- Borders ---------- */
+  --hair: 1px solid var(--rule);
+  --hair-strong: 1px solid var(--ink-900);
+  --rule-thick: 4px solid var(--ink-900);
+  --rule-red: 4px solid var(--red-500);
+
+  /* ---------- Shadows (almost none) ---------- */
+  --shadow-paper: 0 1px 0 rgba(0, 0, 0, 0.04);
+  --shadow-lift: 0 6px 24px -8px rgba(0, 0, 0, 0.12);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-1: 140ms;
+  --dur-2: 240ms;
+  --dur-3: 480ms;
+
+  /* ---------- Layout ---------- */
+  --measure: 64ch;
+  --container: 1200px;
+  --gutter: clamp(24px, 5vw, 80px);
+
+  color-scheme: light;
+}
+
+/* =============================================================
+ * Dark theme — paper goes black, ink goes white, red brightens
+ * ============================================================= */
+[data-theme="dark"] {
+  --paper: #0a0a0a;
+  --paper-50: #121212;
+  --paper-100: #1a1a1a;
+  --paper-200: #222222;
+  --paper-300: #333333;
+
+  --ink-900: #fafaf9;
+  --ink-800: #eceae6;
+  --ink-700: #d9d6d1;
+  --ink-500: #999999;
+  --ink-400: #666666;
+  --ink-300: #444444;
+
+  --red-500: #e5435a;
+  --red-700: #c81c31;
+  --red-300: #f26478;
+
+  --rule: var(--paper-300);
+  color-scheme: dark;
+}
+
+/* =============================================================
+ * Editorial theme — the v1 cream + vermilion design (opt-in)
+ * ============================================================= */
+[data-theme="editorial"] {
+  --paper: #f8f6f2;
+  --paper-50: #fbfaf6;
+  --paper-100: #f0ece6;
+  --paper-200: #ebe6e0;
+  --paper-300: #d6cfc2;
+
+  --ink-900: #231d1a;
+  --ink-800: #39312d;
+  --ink-700: #5a4f48;
+  --ink-500: #746a63;
+  --ink-400: #a19991;
+  --ink-300: #c2bbb1;
+
+  --red-500: #da4e1b;
+  --red-700: #b23e12;
+  --red-300: #ed7845;
+}
+
+/* =============================================================
+ * Map tokens into the Tailwind theme so every utility traces
+ * back to a token (and follows theme switches via var()).
+ * ============================================================= */
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-100: var(--paper-100);
+  --color-paper-200: var(--paper-200);
+  --color-paper-300: var(--paper-300);
+  --color-ink-900: var(--ink-900);
+  --color-ink-800: var(--ink-800);
+  --color-ink-700: var(--ink-700);
+  --color-ink-500: var(--ink-500);
+  --color-ink-400: var(--ink-400);
+  --color-red-500: var(--red-500);
+  --color-red-700: var(--red-700);
+  --color-salmon-500: var(--salmon-500);
+  --color-salmon-400: var(--salmon-400);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-pill: var(--r-pill);
+  --container-page: var(--container);
+}
+
+/* =============================================================
+ * Base
+ * ============================================================= */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+  -webkit-text-size-adjust: 100%;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: var(--bg-1);
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background var(--dur-3) var(--ease-out),
+    color var(--dur-3) var(--ease-out);
+}
+
+::selection {
+  background: var(--red-100);
+  color: var(--ink-900);
+}
+[data-theme="dark"] ::selection {
+  background: var(--red-700);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--red-500);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Skip link — accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--ink-900);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  padding: 12px 18px;
+}
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* =============================================================
+ * Semantic type classes (ported from colors_and_type.css)
+ * ============================================================= */
+.eyebrow,
+.micro {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--fg-muted);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--bg-2);
+  padding: 0.1em 0.35em;
+  border-radius: var(--r-1);
+  color: var(--ink-800);
+}
+
+/* =============================================================
+ * Sticky masthead — solid white at rest
+ * ============================================================= */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--rule);
+  transition: background var(--dur-3) var(--ease-out),
+    border-color var(--dur-3) var(--ease-out);
+}
+.topnav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 0;
+}
+/* Brand lockup — ink monogram + ink "Wei", red period only. */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  color: var(--ink-900);
+}
+.brand .brand-mark {
+  color: var(--ink-900);
+  transition: color var(--dur-2) var(--ease-out);
+}
+.brand .brand-word {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 27px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink-900);
+}
+.brand .dot {
+  color: var(--red-500);
+}
+.brand:hover .brand-mark {
+  color: var(--red-500);
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-toggle {
+  display: none;
+}
+.nav-links {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--fg-muted);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
+}
+.nav-links a:hover {
+  color: var(--fg-1);
+}
+.nav-links a.active {
+  color: var(--fg-1);
+  border-bottom-color: var(--red-500);
+}
+.nav-links .num {
+  color: var(--red-500);
+  margin-right: 7px;
+}
+
+.theme-toggle,
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 13px;
+  background: transparent;
+  border: 1px solid var(--ink-900);
+  color: var(--fg-1);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  cursor: pointer;
+  transition: background var(--dur-2) var(--ease-out),
+    color var(--dur-2) var(--ease-out);
+}
+.theme-toggle:hover,
+.nav-toggle:hover {
+  background: var(--ink-900);
+  color: var(--bg-1);
+}
+.theme-toggle .glyph,
+.nav-toggle .glyph {
+  font-size: 13px;
+  line-height: 0;
+}
+
+/* =============================================================
+ * Hero
+ * ============================================================= */
+.hero {
+  padding: 92px 0 80px;
+  position: relative;
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border: 1px solid var(--ink-900);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--fg-1);
+}
+.status-pill .marker {
+  color: var(--red-500);
+  font-size: 13px;
+  line-height: 0;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(56px, 9.5vw, 124px);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tr-display);
+  color: var(--red-500);
+  margin: 30px 0 26px;
+  text-wrap: balance;
+}
+.hero h1 .red-dot {
+  color: var(--red-500);
+}
+
+.hero-lede {
+  font-family: var(--font-sans);
+  font-size: clamp(18px, 2vw, 21px);
+  color: var(--fg-2);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 54ch;
+}
+.hero-lede em {
+  font-style: normal;
+  color: var(--red-500);
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+/* =============================================================
+ * Buttons — ink fill goes red on hover (a moment of brand at
+ * the point of intent). Red is never a generic CTA fill.
+ * ============================================================= */
+.btn,
+.btn-ghost {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  padding: 14px 24px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--ink-900);
+  transition: background var(--dur-2) var(--ease-out),
+    color var(--dur-2) var(--ease-out), transform var(--dur-1) var(--ease-out);
+}
+.btn {
+  background: var(--ink-900);
+  color: var(--bg-1);
+}
+.btn:hover {
+  background: var(--red-500);
+  border-color: var(--red-500);
+  color: var(--paper);
+}
+.btn:active,
+.btn-ghost:active {
+  transform: scale(0.985);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--fg-1);
+}
+.btn-ghost:hover {
+  background: var(--ink-900);
+  color: var(--bg-1);
+}
+
+/* "Currently" strip under the hero */
+.currently {
+  margin: 80px 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  border-top: 4px solid var(--ink-900);
+  padding-top: 20px;
+}
+.currently .item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-right: 18px;
+}
+.currently dt,
+.currently dd {
+  margin: 0;
+}
+.currently .item-key {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--fg-muted);
+}
+.currently .item-val {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(18px, 2vw, 24px);
+  letter-spacing: -0.01em;
+  color: var(--red-500);
+  line-height: 1.1;
+}
+
+/* =============================================================
+ * Section + section header
+ * ============================================================= */
+.section {
+  padding: 96px 0;
+  border-top: 1px solid var(--rule);
+}
+.section-head {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 36px;
+  align-items: baseline;
+  padding-bottom: 18px;
+  border-bottom: 4px solid var(--ink-900);
+  margin-bottom: 44px;
+}
+.section-head .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--red-500);
+}
+.section-head .title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 64px);
+  letter-spacing: var(--tr-h);
+  line-height: 1;
+  color: var(--ink-900);
+  text-wrap: balance;
+  margin: 0;
+}
+.section-head .lede {
+  grid-column: 2;
+  font-family: var(--font-sans);
+  font-size: var(--t-lede);
+  color: var(--fg-2);
+  line-height: 1.4;
+  margin: 14px 0 0;
+  max-width: 56ch;
+}
+
+/* Red poster modifier — the one full-bleed red section per page.
+ * A poster is a printed move: it stays Wabash red with white type in
+ * every theme, so its tokens are re-pinned to fixed values here rather
+ * than following light/dark. */
+.section-red {
+  --paper: #ffffff;
+  background: #c81c31;
+  color: #ffffff;
+  border-top: 0;
+  padding-top: 84px;
+}
+.section-red .section-head {
+  border-bottom-color: var(--paper);
+}
+.section-red .section-head .num {
+  color: var(--paper);
+  opacity: 0.82;
+}
+.section-red .section-head .title {
+  color: var(--paper);
+}
+.section-red .section-head .lede {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Warm salmon spread — ink-on-salmon, never red (poster move).
+ * Like the red poster, its ink scale is re-pinned to fixed warm values
+ * so the salmon stays black-on-salmon in dark mode too. */
+.section-warm {
+  --ink-900: #231f20;
+  --ink-800: #2f2a2b;
+  --ink-700: #3f3a3b;
+  --ink-500: #6e6a6b;
+  background: var(--salmon-500);
+  color: #231f20;
+  border-top: 0;
+  padding-top: 84px;
+}
+.section-warm .section-head {
+  border-bottom-color: var(--ink-900);
+}
+.section-warm .section-head .num {
+  color: var(--ink-900);
+  opacity: 0.55;
+}
+.section-warm .section-head .title {
+  color: var(--ink-900);
+}
+.section-warm .section-head .lede {
+  color: var(--ink-800);
+}
+
+/* =============================================================
+ * About
+ * ============================================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 56px;
+}
+.about-prose p {
+  font-family: var(--font-sans);
+  font-size: clamp(18px, 1.6vw, 20px);
+  line-height: 1.6;
+  color: var(--ink-900);
+  margin: 0 0 20px;
+  max-width: 60ch;
+}
+.about-prose p:last-child {
+  margin-bottom: 0;
+}
+/* On salmon, emphasis is ink-weight, never red */
+.about-prose em {
+  font-style: normal;
+  color: var(--ink-900);
+  font-weight: 700;
+}
+.about-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 4px solid var(--ink-900);
+  margin: 0;
+}
+.about-meta dt,
+.about-meta dd {
+  margin: 0;
+}
+.about-meta .row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(35, 31, 32, 0.22);
+}
+.about-meta .row:last-child {
+  border-bottom: 0;
+}
+.about-meta .k {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--ink-700);
+}
+.about-meta .v {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--ink-900);
+  font-weight: 600;
+}
+
+/* =============================================================
+ * Strengths — the centerpiece, on the red poster
+ * ============================================================= */
+.strengths-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule-on-red);
+}
+.strength-card {
+  border-bottom: 1px solid var(--rule-on-red);
+  border-right: 1px solid var(--rule-on-red);
+  padding: 30px 30px 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: var(--paper);
+}
+.strength-card:nth-child(2n) {
+  border-right: 0;
+}
+.strength-card .head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.strength-card .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: rgba(255, 255, 255, 0.82);
+}
+.strength-card .name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(30px, 3.4vw, 40px);
+  letter-spacing: var(--tr-h);
+  line-height: 1;
+  color: var(--paper);
+}
+.strength-card .metaphor {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--salmon-400);
+}
+.strength-card .at-best {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  flex: 1;
+}
+.strength-card .edge {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  padding-top: 13px;
+  border-top: 1px solid var(--rule-on-red);
+}
+.strength-card .edge .edge-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: rgba(255, 255, 255, 0.85);
+  display: block;
+  margin-bottom: 5px;
+}
+/* Closing cell — a quiet pull-quote that fills the 6th grid slot */
+.strength-card.closing {
+  justify-content: space-between;
+  gap: 22px;
+}
+.strength-card.closing .quote {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(22px, 2.4vw, 30px);
+  letter-spacing: var(--tr-h);
+  line-height: 1.08;
+  color: var(--paper);
+  margin: 0;
+}
+.strength-card.closing .quote .soft {
+  color: var(--salmon-400);
+}
+
+/* =============================================================
+ * Rows (Experience / Education / Writing)
+ * ============================================================= */
+.rows .row {
+  display: grid;
+  grid-template-columns: 220px 1fr 180px;
+  gap: 36px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.rows .row:first-child {
+  border-top: 1px solid var(--rule);
+}
+.rows .row .when {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--red-500);
+}
+.rows .row .where {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--fg-muted);
+  margin-top: 7px;
+}
+.rows .row .title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(24px, 2.6vw, 32px);
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  color: var(--ink-900);
+}
+.rows .row .title .at {
+  color: var(--fg-muted);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 400;
+}
+.rows .row .body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--fg-2);
+  margin-top: 13px;
+  max-width: 60ch;
+}
+.rows .row .body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.rows .row .body li {
+  margin-bottom: 5px;
+}
+.rows .row .body ul li::before {
+  content: "— ";
+  color: var(--red-500);
+}
+.rows .row .tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--ink-900);
+  padding: 4px 8px;
+  border: 1px solid var(--ink-900);
+  display: inline-block;
+  background: transparent;
+}
+
+/* =============================================================
+ * Projects — hairline cards on paper (red is reserved for
+ * the Strengths poster, so Projects sits on white)
+ * ============================================================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+}
+.project-card {
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  padding: 30px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: transparent;
+  transition: border-color var(--dur-2) var(--ease-out),
+    background var(--dur-2) var(--ease-out);
+}
+.project-card:hover {
+  background: var(--paper-100);
+}
+.project-card .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--red-500);
+}
+.project-card .title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(26px, 2.8vw, 36px);
+  letter-spacing: var(--tr-h);
+  line-height: 1;
+  color: var(--ink-900);
+}
+.project-card .desc {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--fg-2);
+  flex: 1;
+  margin: 0;
+}
+.project-card .tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* Ghosted placeholder treatment (Projects / Writing) */
+.is-placeholder .num,
+.is-placeholder .when {
+  color: var(--ink-400);
+}
+.is-placeholder .title {
+  color: var(--ink-400);
+}
+.is-placeholder .tag {
+  color: var(--ink-400);
+  border-color: var(--ink-300);
+  border-style: dashed;
+}
+.placeholder-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--fg-muted);
+  border: 1px dashed var(--rule);
+  padding: 10px 14px;
+  margin-bottom: 28px;
+}
+.placeholder-note .marker {
+  color: var(--red-500);
+}
+
+/* =============================================================
+ * Contact
+ * ============================================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.contact-prose {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 4.2vw, 56px);
+  letter-spacing: var(--tr-h);
+  line-height: 1.02;
+  color: var(--red-500);
+  margin: 0;
+}
+.contact-sub {
+  font-family: var(--font-sans);
+  font-size: var(--t-lede);
+  color: var(--fg-2);
+  line-height: 1.5;
+  margin: 24px 0 0;
+  max-width: 46ch;
+}
+.contact-rows {
+  display: flex;
+  flex-direction: column;
+  border-top: 4px solid var(--ink-900);
+  margin: 0;
+}
+.contact-rows dt,
+.contact-rows dd {
+  margin: 0;
+}
+.contact-rows .row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.contact-rows .k {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--fg-muted);
+}
+.contact-rows .v {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--fg-1);
+  font-weight: 500;
+}
+.contact-rows .v a {
+  color: var(--fg-1);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: color var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
+}
+.contact-rows .v a:hover {
+  border-bottom-color: var(--red-500);
+  color: var(--red-500);
+}
+.contact-rows .arrow {
+  color: var(--fg-muted);
+  font-size: 12px;
+  font-family: var(--font-mono);
+}
+
+/* =============================================================
+ * Footer / colophon
+ * ============================================================= */
+.footer {
+  border-top: 4px solid var(--ink-900);
+  margin-top: 0;
+}
+.footer-inner {
+  padding: 40px 0 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.footer .colophon-mark {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.footer .colophon-mark .mark {
+  color: var(--red-500);
+}
+.footer .colophon-mark .said {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--fg-muted);
+  max-width: 28ch;
+  line-height: 1.5;
+}
+.footer .meta-row {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--fg-muted);
+  display: flex;
+  gap: 11px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.footer .meta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  text-align: right;
+}
+.footer .sep {
+  color: var(--ink-300);
+}
+
+/* =============================================================
+ * Reveal-on-scroll (progressive enhancement: content is visible
+ * by default and only hidden-then-revealed when JS is present, so
+ * a no-JS render shows everything. Subtle — one motion, 480ms.)
+ * ============================================================= */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--dur-3) var(--ease-out),
+    transform var(--dur-3) var(--ease-out);
+  will-change: opacity, transform;
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =============================================================
+ * Responsive
+ * ============================================================= */
+@media (max-width: 1000px) {
+  .section-head {
+    grid-template-columns: 160px 1fr;
+  }
+  .rows .row {
+    grid-template-columns: 160px 1fr;
+  }
+  .rows .row .tags {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+  .hero {
+    padding: 64px 0 64px;
+  }
+  .currently {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 18px;
+  }
+  .section {
+    padding: 72px 0;
+  }
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .section-head .lede {
+    grid-column: 1;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .strengths-grid {
+    grid-template-columns: 1fr;
+  }
+  .strength-card {
+    border-right: 0;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card {
+    border-right: 0;
+  }
+  .rows .row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .rows .row .where {
+    margin-top: 4px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer .meta-stack {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* Mobile masthead — collapse the inline links into an "Index" panel */
+  .nav-toggle {
+    display: inline-flex;
+  }
+  .theme-toggle .toggle-label {
+    display: none;
+  }
+  .theme-toggle {
+    padding: 8px 11px;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--bg-1);
+    border-bottom: 1px solid var(--rule);
+    padding: 8px var(--gutter) 16px;
+    display: none;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links a {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--rule);
+    border-top: 0;
+    font-size: 13px;
+  }
+  .nav-links a:last-child {
+    border-bottom: 0;
+  }
+  .nav-links a.active {
+    border-bottom-color: var(--rule);
+    color: var(--red-500);
+  }
+}
