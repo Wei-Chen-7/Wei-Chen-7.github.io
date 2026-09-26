@@ -29,7 +29,7 @@ const jetbrains = JetBrains_Mono({
 
 const SITE_TITLE = "Wei Chen · building things that think";
 const SITE_DESCRIPTION =
-  "Wei Chen studies math and physics at Wabash College and does research in machine learning, zero-field NMR, and number theory, on the way to quantum computing.";
+  "Wei Chen is a physics and math double major at Wabash College, headed to Columbia for computer science, with research in machine learning, zero-field NMR, and number theory.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(identity.siteUrl),
@@ -46,6 +46,7 @@ export const metadata: Metadata = {
     "Wabash College",
     "mathematics",
     "physics",
+    "Columbia University",
     "machine learning",
     "quantum computing",
     "ZULF NMR",

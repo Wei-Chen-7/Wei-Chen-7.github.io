@@ -45,11 +45,11 @@ export function sectionNum(id: string): number {
 
 export const hero = {
   lines: ["Wei Chen,", "building things", "that think"],
-  lede: "Math and physics at Wabash College. I do research in <em>machine learning</em>, <em>NMR physics</em>, and <em>number theory</em>, and I'm headed toward <em>quantum computing</em>.",
+  lede: "Physics and math double major at Wabash College, then Columbia for computer science. I do research in <em>machine learning</em>, <em>NMR physics</em>, and <em>number theory</em>, and I'm aiming at <em>quantum computing</em>.",
   primary: { label: "See my research", href: "#research" },
   secondary: { label: "Get in touch", href: "#contact" },
   currently: [
-    { key: "Studying", val: "Math & physics" },
+    { key: "Studying", val: "Physics & math" },
     { key: "Based in", val: "Crawfordsville, IN" },
     { key: "Focus", val: "AI & quantum" },
     { key: "Class of", val: "2027" },
@@ -59,14 +59,15 @@ export const hero = {
 export const about = {
   title: "Some background, a few obsessions, the parts that matter.",
   paragraphs: [
-    "I study <em>mathematics and physics</em> at Wabash College. What pulls me in isn't the code so much as the math underneath it: the structure that decides whether a thing actually works.",
+    "I'm a double major in <em>physics and mathematics</em> at Wabash College, and through the 3-2 Combined Plan I'll go on to <em>Columbia</em> for computer science. What pulls me in isn't the code so much as the math underneath it: the structure that decides whether a thing actually works.",
     "Most of my time goes to research. This summer I was a visiting researcher in Dmitry Budker's group at the Helmholtz-Institut Mainz, working on <em>zero-field NMR</em>. At the same time I worked on <em>single-pass generative models</em> in the Polymath Jr. program with Ricardo Baptista, and I have two <em>number theory</em> papers under review. Quantum computing is where I'm headed next. I finished IBM's Qiskit Global Summer School in August with the Quantum Excellence badge.",
     "I've studied and worked in China, Ireland, South Korea, Germany, and the US, and I speak Chinese, Cantonese, and English. I took Stanford's <em>Code in Place</em> as a student, then came back the next year to teach a section. I've kept a <em>4.0</em> so far, not because the grade is the point, but because I'd rather understand a thing all the way down.",
     "Outside the syllabus I sing second bass in the <em>Wabash Glee Club</em>. We sang our way through New York City over spring break, the best trip I've taken in school. I'm easygoing, and I can hold a real conversation with almost anyone. That's usually the thing that opens the door.",
   ],
   meta: [
     { k: "Based in", v: "Crawfordsville, IN" },
-    { k: "Studying", v: "Mathematics & physics" },
+    { k: "Studying", v: "Physics & mathematics" },
+    { k: "Then", v: "Columbia · Computer science" },
     { k: "Research", v: "ML · NMR · Number theory" },
     { k: "Record", v: "4.0 GPA · Rank 1 of 246" },
     { k: "Languages", v: "Chinese · Cantonese · English" },
@@ -326,16 +327,26 @@ export const education: { lede: string; items: Row[] } = {
   lede: "Schooling, in chronological reverse.",
   items: [
     {
+      when: "Next",
+      where: "New York, NY",
+      title: "Columbia University",
+      at: "B.S., Computer Science · Combined Plan",
+      body: [
+        "Wabash's 3-2 Combined Plan with Columbia Engineering: a B.A. from Wabash, then a B.S. in computer science from Columbia.",
+      ],
+      tags: ["Computer science"],
+    },
+    {
       when: "2025 – 2027 (expected)",
       where: "Crawfordsville, IN",
       title: "Wabash College",
-      at: "B.A., Mathematics",
+      at: "B.A., Physics & Mathematics",
       body: [
-        "Mathematics major with a second focus in physics.",
+        "Double major in physics and mathematics.",
         "4.0 GPA, ranked first of 246. Dean's List every semester so far. Presidential International Scholarship (merit, full tuition).",
         "Coursework includes linear algebra, number theory, numerical analysis, multivariable calculus, data structures, thermal physics, and computational physics.",
       ],
-      tags: ["Math", "Physics"],
+      tags: ["Physics", "Math"],
     },
     {
       when: "Jul 2026",
