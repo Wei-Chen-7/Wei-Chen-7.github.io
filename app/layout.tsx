@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Alfa_Slab_One, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { identity } from "@/lib/content";
 
 /* Free, OFL-licensed Google Fonts — the production type stack.
  * Display — Alfa Slab One · Body — Hanken Grotesk · Mono — JetBrains Mono.
@@ -26,37 +27,42 @@ const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
 });
 
+const SITE_TITLE = "Wei Chen · building things that think";
 const SITE_DESCRIPTION =
-  "Wei Chen — math and computer science at Wabash College, drawn to the math behind the code. Building things that think.";
+  "Wei Chen is a physics and math double major at Wabash College, headed to Columbia for computer science, with research in machine learning, zero-field NMR, and number theory.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://weichen.studio"),
+  metadataBase: new URL(identity.siteUrl),
   title: {
-    default: "Wei Chen — building things that think",
+    default: SITE_TITLE,
     template: "%s · Wei Chen",
   },
   description: SITE_DESCRIPTION,
-  applicationName: "weichen.studio",
-  authors: [{ name: "Wei Chen" }],
+  applicationName: "Wei Chen",
+  authors: [{ name: "Wei Chen", url: identity.siteUrl }],
+  alternates: { canonical: "/" },
   keywords: [
     "Wei Chen",
     "Wabash College",
     "mathematics",
-    "computer science",
-    "AI",
+    "physics",
+    "Columbia University",
+    "machine learning",
     "quantum computing",
+    "ZULF NMR",
+    "number theory",
   ],
   openGraph: {
-    title: "Wei Chen — building things that think",
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    url: "https://weichen.studio",
-    siteName: "weichen.studio",
+    url: identity.siteUrl,
+    siteName: "Wei Chen",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Wei Chen — building things that think",
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },
 };

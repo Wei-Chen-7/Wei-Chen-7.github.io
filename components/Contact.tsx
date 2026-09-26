@@ -1,15 +1,15 @@
 import SectionHead from "./SectionHead";
 import Reveal from "./Reveal";
-import { contact } from "@/lib/content";
+import { contact, sectionNum } from "@/lib/content";
 
 export default function Contact() {
   return (
     <section className="section" id="contact">
       <div className="container">
         <SectionHead
-          num={7}
+          num={sectionNum("contact")}
           label="Contact"
-          title="Say hello, or send a strange link."
+          title={contact.title}
         />
         <Reveal className="contact-grid">
           <div>

@@ -1,6 +1,7 @@
 import TopNav from "@/components/TopNav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Research from "@/components/Research";
 import Strengths from "@/components/Strengths";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
@@ -16,6 +17,7 @@ export default function Home() {
       <main id="main">
         <Hero />
         <About />
+        <Research />
         <Strengths />
         <Projects />
         <Experience />
