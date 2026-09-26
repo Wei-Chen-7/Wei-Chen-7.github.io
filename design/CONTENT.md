@@ -36,7 +36,7 @@ needs Wei to confirm or supply real copy before launch.
 - Member of the **Wabash Glee Club** (sang through NYC over spring break — "best trip I've taken in school").
 - Easygoing — can hold a real conversation with almost anyone; usually the thing that opens the door.
 - Based in **Crawfordsville, IN** (Wabash College). `[from Guide — geographically consistent]`
-- **Class of 2027 (expected).** *(confirmed by Wei)*
+- **Class of 2028 (expected)** at Wabash, then Columbia via the 3-2 Combined Plan. *(confirmed by Wei)*
 
 ## Strengths — the centerpiece (Folio · CliftonStrengths Top 5)
 Each card: name + metaphor, an "at my best," and a growth edge. Use the Guide's

@@ -52,7 +52,7 @@ export const hero = {
     { key: "Studying", val: "Physics & math" },
     { key: "Based in", val: "Crawfordsville, IN" },
     { key: "Focus", val: "AI & quantum" },
-    { key: "Class of", val: "2027" },
+    { key: "Class of", val: "2028" },
   ],
 };
 
@@ -71,7 +71,7 @@ export const about = {
     { k: "Research", v: "ML · NMR · Number theory" },
     { k: "Record", v: "4.0 GPA · Rank 1 of 246" },
     { k: "Languages", v: "Chinese · Cantonese · English" },
-    { k: "Class of", v: "2027 (expected)" },
+    { k: "Class of", v: "2028 (expected)" },
   ],
 };
 
@@ -327,7 +327,7 @@ export const education: { lede: string; items: Row[] } = {
   lede: "Schooling, in chronological reverse.",
   items: [
     {
-      when: "Next",
+      when: "From 2028",
       where: "New York, NY",
       title: "Columbia University",
       at: "B.S., Computer Science · Combined Plan",
@@ -337,7 +337,7 @@ export const education: { lede: string; items: Row[] } = {
       tags: ["Computer science"],
     },
     {
-      when: "2025 – 2027 (expected)",
+      when: "2025 – 2028 (expected)",
       where: "Crawfordsville, IN",
       title: "Wabash College",
       at: "B.A., Physics & Mathematics",
