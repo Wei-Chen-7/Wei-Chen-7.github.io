@@ -20,17 +20,17 @@ export default function Hero() {
           <span className="red-dot">.</span>
         </h1>
 
-        <p className="hero-lede">
-          Math and computer science at Wabash College, drawn to the math behind
-          the code — especially <em>AI</em> and <em>quantum computing</em>.
-        </p>
+        <p
+          className="hero-lede"
+          dangerouslySetInnerHTML={{ __html: hero.lede }}
+        />
 
         <div className="hero-actions">
-          <a className="btn" href="#strengths">
-            See my strengths <span aria-hidden="true">→</span>
+          <a className="btn" href={hero.primary.href}>
+            {hero.primary.label} <span aria-hidden="true">→</span>
           </a>
-          <a className="btn-ghost" href="#contact">
-            Get in touch <span aria-hidden="true">→</span>
+          <a className="btn-ghost" href={hero.secondary.href}>
+            {hero.secondary.label} <span aria-hidden="true">→</span>
           </a>
         </div>
 

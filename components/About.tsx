@@ -1,15 +1,15 @@
 import SectionHead from "./SectionHead";
 import Reveal from "./Reveal";
-import { about } from "@/lib/content";
+import { about, sectionNum } from "@/lib/content";
 
 export default function About() {
   return (
     <section className="section section-warm" id="about">
       <div className="container">
         <SectionHead
-          num={1}
+          num={sectionNum("about")}
           label="About"
-          title="Some background, a few obsessions, the parts that matter."
+          title={about.title}
         />
         <Reveal className="about-grid">
           <div className="about-prose">

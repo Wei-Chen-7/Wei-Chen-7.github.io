@@ -1,22 +1,17 @@
 import SectionHead from "./SectionHead";
 import Reveal from "./Reveal";
-import { projects } from "@/lib/content";
+import { LinkList } from "./Rows";
+import { projects, sectionNum } from "@/lib/content";
 
 export default function Projects() {
   return (
     <section className="section" id="projects">
       <div className="container">
-        <SectionHead num={3} label="Projects" title={projects.lede} />
-        <p className="placeholder-note">
-          <span className="marker" aria-hidden="true">
-            ◍
-          </span>
-          {projects.note}
-        </p>
+        <SectionHead num={sectionNum("projects")} label="Projects" title={projects.lede} />
         <Reveal className="projects-grid">
-          {projects.items.map((p) => (
-            <article className="project-card is-placeholder" key={p.num}>
-              <div className="num">/ {String(p.num).padStart(2, "0")}</div>
+          {projects.items.map((p, i) => (
+            <article className="project-card" key={p.title}>
+              <div className="num">/ {String(i + 1).padStart(2, "0")}</div>
               <h3 className="title">{p.title}</h3>
               <p className="desc">{p.desc}</p>
               <div className="tags">
@@ -26,6 +21,7 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
+              <LinkList links={p.links} />
             </article>
           ))}
         </Reveal>

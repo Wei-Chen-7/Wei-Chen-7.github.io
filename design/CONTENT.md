@@ -16,9 +16,9 @@ needs Wei to confirm or supply real copy before launch.
 - **Wordmark:** `Wei.` — set in Wabash Red with a red period (the only loud mark in the masthead)
 - **Logo mark:** circular monogram — a continuous sine wave forming a **W** nested inside a **C**
   ("Wei Chen as signal"). Knockout (white) on ink; on salmon for warm callouts.
-- **Domain:** weichen.studio
+- **Domain:** wei-chen-7.github.io  *(weichen.studio is not registered yet)*
 - **Email:** **wchen@wabash.edu**  *(confirmed by Wei; the Brand Guide's `chen@wabash.edu` is wrong)*
-- **GitHub:** github.com/Chin-Way  *(confirmed by Wei; the Guide's `weichen` was a placeholder)*
+- **GitHub:** github.com/Wei-Chen-7  *(the account was renamed from Chin-Way, whose profile URL now 404s)*
 - **LinkedIn:** linkedin.com/in/wei-chen  *(confirmed by Wei)*
 - **Status:** `◍ Available for opportunities`
 

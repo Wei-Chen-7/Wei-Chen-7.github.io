@@ -1,15 +1,15 @@
 import SectionHead from "./SectionHead";
 import Reveal from "./Reveal";
-import { strengths } from "@/lib/content";
+import { strengths, sectionNum } from "@/lib/content";
 
 export default function Strengths() {
   return (
     <section className="section section-red" id="strengths">
       <div className="container">
         <SectionHead
-          num={2}
+          num={sectionNum("strengths")}
           label="Strengths"
-          title="Five talents, in use."
+          title={strengths.title}
           lede={strengths.lede}
         />
         <Reveal className="strengths-grid">
@@ -32,10 +32,8 @@ export default function Strengths() {
           <article className="strength-card closing">
             <span className="num">/ —</span>
             <p className="quote">
-              Five talents, pointed at the same thing —{" "}
-              <span className="soft">
-                the hard calls, the new rooms, the better paths.
-              </span>
+              {strengths.closing.lead}{" "}
+              <span className="soft">{strengths.closing.soft}</span>
             </p>
           </article>
         </Reveal>

@@ -370,7 +370,7 @@ code {
 
 .nav-controls {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 12px;
 }
 .nav-toggle {
@@ -378,8 +378,13 @@ code {
 }
 .nav-links {
   display: flex;
-  gap: 26px;
+  gap: 22px;
   align-items: center;
+}
+/* The masthead is tight with eight sections: drop the "/ " there
+ * (it comes back in the collapsed Index panel) */
+.nav-links .slash {
+  display: none;
 }
 .nav-links a {
   font-family: var(--font-mono);
@@ -433,6 +438,10 @@ code {
 .nav-toggle .glyph {
   font-size: 13px;
   line-height: 0;
+}
+/* Desktop: links are inline, so the Index button stays hidden */
+.nav-toggle {
+  display: none;
 }
 
 /* =============================================================
@@ -868,10 +877,14 @@ code {
   color: var(--ink-900);
 }
 .rows .row .title .at {
+  display: block;
+  margin-top: 8px;
   color: var(--fg-muted);
   font-family: var(--font-sans);
   font-size: 17px;
   font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
 }
 .rows .row .body {
   font-family: var(--font-sans);
@@ -997,6 +1010,67 @@ code {
   margin-bottom: 28px;
 }
 .placeholder-note .marker {
+  color: var(--red-500);
+}
+
+/* Outbound links on rows and cards: mono label + arrow, red on hover */
+.link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 14px;
+}
+.link-list a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--fg-1);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-900);
+  padding-bottom: 2px;
+  display: inline-flex;
+  gap: 7px;
+  transition: color var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
+}
+.link-list a:hover {
+  color: var(--red-500);
+  border-color: var(--red-500);
+}
+.link-list .arrow {
+  color: var(--red-500);
+}
+.project-card .link-list {
+  margin-top: 2px;
+}
+
+/* Paper titles run long; set them smaller than role titles */
+.rows .row .title.title-paper {
+  font-size: clamp(20px, 2vw, 25px);
+  line-height: 1.2;
+}
+.rows .row .title sup {
+  font-size: 0.6em;
+  line-height: 0;
+  vertical-align: 0.55em;
+}
+
+/* A quiet footnote under a section (not a placeholder) */
+.quiet-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-mono);
+  color: var(--fg-muted);
+  margin: 24px 0 0;
+}
+.quiet-note .marker {
   color: var(--red-500);
 }
 
@@ -1240,15 +1314,19 @@ code {
     text-align: left;
   }
 
-  /* Mobile masthead — collapse the inline links into an "Index" panel */
-  .nav-toggle {
-    display: inline-flex;
-  }
   .theme-toggle .toggle-label {
     display: none;
   }
   .theme-toggle {
     padding: 8px 11px;
+  }
+}
+
+/* Collapse the inline links into an "Index" panel once eight
+ * sections no longer fit on one line */
+@media (max-width: 1180px) {
+  .nav-toggle {
+    display: inline-flex;
   }
   .nav-links {
     position: absolute;
@@ -1278,5 +1356,13 @@ code {
   .nav-links a.active {
     border-bottom-color: var(--rule);
     color: var(--red-500);
+  }
+  .nav-links .slash {
+    display: inline;
+  }
+  /* Keep the masthead off the screen edges once it collapses */
+  .topnav-inner {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
   }
 }

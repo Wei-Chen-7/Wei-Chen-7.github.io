@@ -1,4 +1,4 @@
-# weichen.studio
+# Wei Chen · personal site
 
 Personal website for **Wei Chen** — _"building things that think."_
 
@@ -31,24 +31,22 @@ npm run start    # serve the production build
 | `app/layout.tsx` | Fonts, metadata, the pre-paint theme/`js` script. |
 | `app/page.tsx` | Section assembly. |
 | `lib/content.ts` | **All copy.** Real Folio facts + clearly-labeled placeholders. Edit here to update the site. |
-| `components/` | `TopNav`, `Hero`, `About`, `Strengths`, `Projects`, `Experience`, `Education`, `Writing`, `Contact`, `Footer`, `Logo`, `SectionHead`, `Reveal`. |
+| `components/` | `TopNav`, `Hero`, `About`, `Research`, `Strengths`, `Projects`, `Experience`, `Education`, `Writing`, `Contact`, `Footer`, `Logo`, `SectionHead`, `Reveal`, and `Rows` (the shared dated-row layout). |
 | `design/` | The original design system, brand guide, and canonical content (`CONTENT.md`). |
 
-## Content notes (read before launch)
+## Content notes
 
-Copy follows `design/CONTENT.md`: **real facts come from the Strengths Folio;
-voice and layout come from Brand Guide v2.** A few sections are intentionally
-**labeled placeholders** until real copy arrives — they are not invented:
+All copy lives in `lib/content.ts` and comes from Wei's own CVs, applications,
+and public GitHub repos. There are no placeholder sections left.
 
-- **Projects** — ghost cards (`[ Project ]`) with an "on the way" note.
-- **Experience** — placeholder rows (`[ Role ] · [ Organization ]`).
-- **Writing** — a single placeholder row.
-- **Education** — Wabash + Code in Place are real; specific coursework and any
-  study-abroad term are deferred to a labeled note.
-
-Verified details already wired in: `wchen@wabash.edu`, `github.com/Chin-Way`,
-`linkedin.com/in/wei-chen`, Class of 2027 (expected). To swap placeholders for
-real content, edit `lib/content.ts` — nothing else needs to change.
+- **Research** (new section): Helmholtz-Institut Mainz, Polymath Jr. REU,
+  number theory, SJTU, and the Qiskit Global Summer School.
+- **Projects** link to the public repos on `github.com/Wei-Chen-7`.
+- **Writing** lists the manuscripts under review; link preprints as they go public.
+- Section numbers are derived from `nav`, so adding or reordering a section
+  only means editing that list.
+- The site lives at `wei-chen-7.github.io`. If a custom domain is added,
+  update `identity.domain` and `identity.siteUrl` in `lib/content.ts`.
 
 ## Brand rules honored
 

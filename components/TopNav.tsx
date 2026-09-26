@@ -58,7 +58,7 @@ export default function TopNav() {
         <a
           href="#top"
           className="brand"
-          aria-label="Wei Chen — home"
+          aria-label="Wei Chen, home"
           onClick={() => setMenuOpen(false)}
         >
           <Logo size={30} className="brand-mark" title="" />
@@ -77,7 +77,8 @@ export default function TopNav() {
               onClick={() => setMenuOpen(false)}
             >
               <span className="num" aria-hidden="true">
-                / {String(item.num).padStart(2, "0")}
+                <span className="slash">/ </span>
+                {String(item.num).padStart(2, "0")}
               </span>
               {item.label}
             </a>
